@@ -24,16 +24,16 @@
 
 ```go
 client := roc.Client{
-		AuthKey:   "WbykCN****8pwd3",
-		SecretKey: "23423****dfsfs",
-	}
-	expiredAt := 1594704891
-	authToken, err := client.GetToken("1234567****shao", "159****91766-10**26", expiredAt)
-	if err != nil {
-		panic(err)
-	}
+    AuthKey:   "WbykCN****8pwd3",
+    SecretKey: "23423****dfsfs",
+}
+expiredAt := 1594704891
+authToken, err := client.GetToken("1234567****shao", "159****91766-10**26", expiredAt)
+if err != nil {
+    panic(err)
+}
 
-	fmt.Println(authToken)
+fmt.Println(authToken)
 ```
 或者在 `main.go` 中配置好参数后直接运行 `go run main.go` 也可以查看生成的结果。
 
