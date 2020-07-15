@@ -1,7 +1,7 @@
 package main
 
 import (
-	"cor-server-go/cor"
+	"cor-server-go/roc"
 	"fmt"
 	"time"
 )
@@ -17,7 +17,7 @@ import (
  * AuthToken: eyJ0b2tlbiI6ImZlNTdkNzUzMDI1ZDIwMzdlNGZjMDdhMmRkYTBhZmMxIiwidGltZXN0YW1wIjoxNTk0NzA0ODkxLCJ1c2VyYWNjb3VudCI6InJlc2VydmUiLCJyb2xlIjoicmVzZXJ2ZSJ9  lADPXbcGTTuoSBvn
  */
 func main() {
-	client := cor.Client{
+	client := roc.Client{
 		AuthKey:   "WbykCN****8pwd3",
 		SecretKey: "23423****dfsfs",
 	}
@@ -27,6 +27,5 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(expiredAt)
 	fmt.Println(authToken)
 }

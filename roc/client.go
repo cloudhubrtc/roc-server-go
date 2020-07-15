@@ -1,4 +1,4 @@
-package cor
+package roc
 
 import (
 	"crypto/md5"
@@ -16,10 +16,8 @@ type Client struct {
 }
 
 type Token struct {
-	Token       string `json:"token"`
-	Timestamp   int64  `json:"timestamp"`
-	UserAccount string `json:"useraccount"`
-	Role        string `json:"role"`
+	Token     string `json:"token"`
+	Timestamp int64  `json:"timestamp"`
 }
 
 func (client *Client) GetToken(channelName string, userId string, expireTime int64) (authToken string, err error) {
@@ -45,10 +43,8 @@ func (client *Client) GetToken(channelName string, userId string, expireTime int
 	allEncodeStr := hex.EncodeToString(allMd5.Sum(nil))
 
 	token := &Token{
-		Token:       allEncodeStr,
-		Timestamp:   expireTime,
-		UserAccount: "reserve",
-		Role:        "reserve",
+		Token:     allEncodeStr,
+		Timestamp: expireTime,
 	}
 	return token.GetBase64Str()
 }
